@@ -9,6 +9,7 @@ class PagesController < ApplicationController
   def create
     @page = Page.new(page_params)
     @page.like = 0
+    @page.count = 0
     if @page.save
       redirect_to :home
     else

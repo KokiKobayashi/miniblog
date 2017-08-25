@@ -4,6 +4,6 @@
 
 <% @pages.each do |page| %>
   <h4><%= page.id %>: <%= link_to page.title, page %></h4>
-  <%= link_to 'いいね', page_like_count_path(page_id: page.id) %>: <%= page.like %> | コメント数: <%= Comment.where(page_id: page.id).count %> | 投稿日時: <%= page.created_at.strftime("%Y/%m/%d %H:%M:%S") %>
+  <%= link_to 'いいね', page_like_count_path(page_id: page.id) %>: <%= page.like %> | コメント数: <%= page.count %> | 投稿日時: <%= page.created_at.strftime("%Y/%m/%d %H:%M:%S") %>
 
 <% end %>

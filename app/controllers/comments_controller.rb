@@ -4,6 +4,8 @@ class CommentsController < ApplicationController
   end
   def create
     @page = Page.find(comment_params[:page_id])
+    @page.count += 1
+    @page.save
     @comment = Comment.new(comment_params)
     if @comment.save
       redirect_to @page
