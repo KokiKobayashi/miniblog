@@ -1,0 +1,8 @@
+<h1>Blogs#home</h1>
+
+
+<% @pages.each do |page| %>
+  <h4><%= page.id %>: <%= page.title %></h4>
+  いいね: <%= page.like %> | コメント数: # | 投稿日時: <%= page.created_at %>
+
+<% end %>
